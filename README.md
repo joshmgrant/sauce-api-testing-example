@@ -82,8 +82,5 @@ In either case, you should see a nice welcome message.
 
 Once you have the app up and running, you can run the tests by executing
 
-```
-pytest
-```
 
 All tests should pass. If they do not, check that the app is running on port 5000.
