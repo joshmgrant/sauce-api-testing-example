@@ -1,6 +1,4 @@
-# SauceCon 2021 Workshop - Build an API and API Testing Framework from Scratch in 120 Minutes
-
-Hello! If you are reading this you likely are interested in or attending my [SauceCon 2021 Workshop](https://saucecon.com/workshops/) called "Build an API and API Testing Framework from Scratch in 120 Minutes". This is part of the workshop "API Testing and Monitoring". If you are not attending my workshop or not interested in API building and testing, then I hope you enjoy this repository nonetheless. 
+# Sauec Labs API Testing - An Example 
 
 The structure of this repository contains
 
@@ -12,20 +10,6 @@ The workshop shall walk through the API app and test framework.
 ## Before You Start
 
 This is a Python project, so you will need Python 3.7+ installed on your machine. An IDE such as PyCharm or VS Code is recommended.
-
-## The Layout of the Workshop
-
-The workshop at SauceCon - which [you should totally check out](https://www.saucecon.com) - will walk through developing this Flask app and in turn developing an API test framework for it. This is done using some tags. Here's what each tag will show:
-
-- *v1-starting* Creating an initial app with a single endpoint
-- *v2-post-get* Creating two endpoints that allow POST and GET requests
-- *v3-flask-restful* Adding in Flask-Restful, a library for writing REST APIs
-- *v4-add-db* Implementing a SQL database to maintain app state and data
-- *t1-entries-test* Writing our first test
-- *t2-entry-tests* Writing some more complex tests
-- *t3-api-wrapper* Looking for patterns and making a lightweight test framework
-- *t4-api-utilities* From good to great
-
 
 ## Installing And Setting up the Project
 
