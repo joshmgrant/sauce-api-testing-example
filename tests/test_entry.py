@@ -1,9 +1,9 @@
-def test_entry_get(saucelog):
+def _entry_get(saucelog):
     response = (saucelog.get("/entry/1"))
 
     assert response.status_code_is(200)
 
-def test_entry_patch(saucelog):
+def entry_patch(saucelog):
 
     example_post = {
         "title": "Habenero Sizzle",
@@ -24,7 +24,7 @@ def test_entry_patch(saucelog):
 
     assert response.status_code_is(200)
 
-def test_entry_delete(saucelog):
+def entry_delete(saucelog):
     example_post = {
         "title": "Thai Chili Express",
         "description": "Basil and Thai flavoured sauce",
