@@ -1,0 +1,3 @@
+rest-url: "https://api.us-west-4-i3er.saucelabs.com/rest/v1"
+vm-version: "v2alpha"
+tunnel-identifier: "apiTunnel"
