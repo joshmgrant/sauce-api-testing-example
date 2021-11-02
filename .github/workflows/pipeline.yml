@@ -23,11 +23,11 @@ jobs:
     - name: Deploy
       run: |
         guinicorn --bind 0.0.0.0:5000 main:app
-    - uses: saucelabs/sauce-connect-action@v2
+    - name: Start Sauce Connect
+      uses: saucelabs/sauce-connect-action@v2
       with:
           username: ${{ secrets.SAUCE_USERNAME }}
           accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
-          tunnelIdentifier: github-action-tunnel
           scVersion: 4.7.1
           config: sauce-apif-config.yml
     - name: Integration test
