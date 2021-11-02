@@ -24,7 +24,7 @@ jobs:
       run: |
         gunicorn --bind 0.0.0.0:5000 main:app &
     - name: Start Sauce Connect
-      uses: saucelabs/sauce-connect-action@v1
+      uses: saucelabs/sauce-connect-action@v2.0.0
       with:
           username: ${{ secrets.SAUCE_USERNAME }}
           accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
