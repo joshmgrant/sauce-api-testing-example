@@ -29,7 +29,6 @@ jobs:
           username: ${{ secrets.SAUCE_USERNAME }}
           accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
           scVersion: 4.6.4
-          configFile: ./sauce-apif-config.yml
     - name: Integration test
       run: |
         docker run quay.io/saucelabs/apifctl run-all -T apiTunnel -H https://josh.grant:${{ secrets.SAUCE_ACCESS_KEY }}@api.us-west-1.saucelabs.com/api-testing/rest/v4/${{ secrets.APIF_HOOK }}
