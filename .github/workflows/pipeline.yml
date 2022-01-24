@@ -30,6 +30,7 @@ jobs:
           accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
           scVersion: 4.7.1
           tunnelIdentifier: apiTunnel
+          no-remove-colliding-tunnels: true
           vm-version: v2alpha
           rest-url: https://api.us-west-4-i3er.saucelabs.com/rest/v1
     - name: Integration test
