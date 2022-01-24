@@ -34,4 +34,4 @@ jobs:
           rest-url: https://api.us-west-4-i3er.saucelabs.com/rest/v1
     - name: Integration test
       run: |
-        docker run quay.io/saucelabs/apifctl run-all -S -T apiTunnel -H https://josh.grant:${{ secrets.SAUCE_ACCESS_KEY }}@api.us-west-1.saucelabs.com/api-testing/rest/v4/${{ secrets.APIF_HOOK }}
+        docker run quay.io/saucelabs/apifctl run-all -S -T apiTunnel -H ${{ secrets.APIF_HOOK }}
