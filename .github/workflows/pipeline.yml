@@ -1,0 +1,37 @@
+
+name: Build, Run And Test
+
+on:
+  push:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.8
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.8
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    - name: Deploy
+      run: |
+        gunicorn --bind 0.0.0.0:5000 main:app &
+    - name: Start Sauce Connect
+      uses: saucelabs/sauce-connect-action@v2.0.0
+      with:
+          username: ${{ secrets.SAUCE_USERNAME }}
+          accessKey: ${{ secrets.SAUCE_ACCESS_KEY }}
+          scVersion: 4.7.1
+          tunnelIdentifier: apiTunnel
+          vm-version: v2alpha
+          rest-url: https://api.us-west-4-i3er.saucelabs.com/rest/v1
+    - name: Integration test
+      run: |
+        docker run quay.io/saucelabs/apifctl run-all -S -T apiTunnel -H https://josh.grant:${{ secrets.SAUCE_ACCESS_KEY }}@api.us-west-1.saucelabs.com/api-testing/rest/v4/${{ secrets.APIF_HOOK }}

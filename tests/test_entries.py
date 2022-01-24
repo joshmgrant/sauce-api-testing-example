@@ -23,13 +23,13 @@ post_testdata = [{
         'heat_level': ''
 }]
 
-def test_entries_get(saucelog):
+def entries_get(saucelog):
     response = saucelog.get("/entries")
 
     assert response.status_code_is(200)
 
 @pytest.mark.parametrize("example_post", post_testdata)
-def test_entries_post(saucelog, example_post):
+def entries_post(saucelog, example_post):
 
     response = saucelog.post("/entries", data=example_post)
 
